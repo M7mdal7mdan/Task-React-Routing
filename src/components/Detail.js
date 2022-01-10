@@ -1,17 +1,21 @@
 import React from 'react'
+import { useParams } from 'react-router-dom';
+import products from '../products';
+
 
 function Detail() {
-
-    let cookie
+    
+let {produtsSlug} = useParams();
+let product = products.find((det) => det.slug === produtsSlug)
+   
     return (
         <div className="detail">
-            {cookie && // if there is cookie show its data 
-                <>
-                    <h5>{cookie.name}</h5>
-                    <img src={cookie.image} alt="cookie" />
-                    <p>{cookie.price} KD</p>
-                    <p>{cookie.description}</p>
-                </>}
+            <h1>{product.id}</h1>
+            <h1>{product.name}</h1>
+            <h1>{product.price}</h1>
+            <h1>{product.slug}</h1>
+            <h1>{product.description}</h1>
+            <h1>{product.image}</h1>
 
 
         </div>

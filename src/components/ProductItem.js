@@ -1,4 +1,4 @@
-
+import Detail from "./Detail";
 
 const ProductItem = (props) => {
   const product = props.product;
